@@ -1,4 +1,3 @@
-
 steps:
 - task:  NodeTool@0
   inputs:
