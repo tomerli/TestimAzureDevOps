@@ -25,4 +25,4 @@ steps:
   displayName: 'publish testim test results'
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: 'testim-tests-report.xml'
+    testResultsFiles: '**/testim-tests-report.xml'
