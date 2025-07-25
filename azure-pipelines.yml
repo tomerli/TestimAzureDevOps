@@ -20,3 +20,9 @@ steps:
     --report-file "testim-report.xml" \
     --result-label "ADO pipeline" \
     --result-label $myBuildNum 
+
+- task: PublishTestResults@2
+  displayName: 'publish testim test results'
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/testim-tests-report.xml'
