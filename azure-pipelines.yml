@@ -1,0 +1,22 @@
+
+steps:
+- task:  NodeTool@0
+  inputs:
+    versionSpec: '23.x'
+  displayName: 'Install Node.js'
+- script: |
+    npm install -g @testim/testim-cli
+  
+  displayName: 'npm install testim-cli and run tests'
+- script: |
+    myBuildNum=$(echo $(Build.BuildNumber) | sed -e 's/^.*\(.\)$/\1/')
+    echo "Build Number is : "  $myBuildNum
+    testim \
+    --token "HFPMMWmDBgphmMFNcfS4oxVts7JPyZChVl1rYgGXBPs5pkKT8C" \
+    --project "8iuIg6jOYNgj5YnNs5RJ" \
+    --grid "testim-ha-grid" \
+    --report-file testim-tests-report.xml \
+    --test-plan "AzureDevops" \
+    --report-file "testim-report.xml" \
+    --result-label "ADO pipeline" \
+    --result-label $myBuildNum 
