@@ -15,7 +15,6 @@ steps:
     --token "HFPMMWmDBgphmMFNcfS4oxVts7JPyZChVl1rYgGXBPs5pkKT8C" \
     --project "8iuIg6jOYNgj5YnNs5RJ" \
     --grid "testim-ha-grid" \
-    --report-file testim-tests-report.xml \
     --test-plan "AzureDevops" \
     --report-file "testim-report.xml" \
     --result-label "ADO pipeline" \
@@ -25,4 +24,4 @@ steps:
   displayName: 'publish testim test results'
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: '**/testim-tests-report.xml'
+    testResultsFiles: '**/testim-report.xml'
